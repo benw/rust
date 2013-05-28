@@ -518,6 +518,10 @@ y)` matches any tuple whose first element is zero, and binds `y` to
 the second element. `(x, y)` matches any two-element tuple, and binds both
 elements to variables.
 
+Patterns that bind variables default to binding to a copy of the matched
+value. This can be changed to bind to a pointer to the matched value by
+using the `ref` keyword before the variable name.
+
 Any `match` arm can have a guard clause (written `if EXPR`), called a
 *pattern guard*, which is an expression of type `bool` that
 determines, after the pattern is found to match, whether the arm is
